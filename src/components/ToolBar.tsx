@@ -4,6 +4,6 @@ import { ThemedButton } from "./ThemedButton";
 // An intermediate component that uses the ThemedButton
 export function Toolbar() {
     return (
-      <ThemedButton />
+      <h1 className="header">Task Assistant</h1>
     );
   }

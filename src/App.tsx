@@ -59,7 +59,7 @@ const App = (props: IHooksAppProps) => {
   }, [toggleThemeCount]);
 
   return (
-    <div className="App">
+    <div className="app">
       <ThemeContext.Provider value={{ theme: theme, toggleTheme: toggleTheme }}>
         <Toolbar />
       </ThemeContext.Provider>

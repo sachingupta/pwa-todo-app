@@ -2,13 +2,21 @@
   background: #209cee;
   padding: 30px;
   margin-right: 20px;
+  max-width: 400px;
+  height: 100%;
+  margin: auto;
 }
 
-.todo-list {
+.header{
+    text-align: center;
+    color: white;
+}
+
+.todoList {
   background: #e8e8e8;
   border-radius: 4px;
   padding: 5px;
-  max-width: 400px;
+  margin-bottom: 10px;
 }
 
 .todo {
@@ -23,8 +31,12 @@
   justify-content: space-between;
 }
 
-.todo-input {
+.todoInput {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
   width: 100%;
+  border-radius: 3px;
+  padding: 3px 10px;
+  box-sizing: border-box;
 }
 
 .table-cell {

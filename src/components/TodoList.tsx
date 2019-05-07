@@ -22,7 +22,7 @@ export const TodoListRenderer = (props: ITodoListRendererProps) => {
         />);
     }
     return (
-        <div className="todo-list">
+        <div className="todoList">
             {todosRender}
         </div>
     );
