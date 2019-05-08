@@ -13,11 +13,12 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.0",
+    "sw-precache": "^5.2.1",
     "typescript": "3.4.5"
   },
   "scripts": {
     "dev": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && sw-precache --config=sw-precache-config.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
