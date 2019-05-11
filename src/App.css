@@ -42,3 +42,16 @@
 .table-cell {
   vertical-align: top;
 }
+
+
+.notify{
+  background-color: #0066B2;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.danger{
+  background-color: #D77623;
+}

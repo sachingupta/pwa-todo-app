@@ -6,6 +6,7 @@ import { TodoListRenderer } from "./components/TodoList";
 import { TodoFormContainer } from "./components/TodoFormContainer";
 import { ThemeContext, themes } from "./components/ThemeContext";
 import { Toolbar } from "./components/ToolBar";
+import { Notifier } from "./components/Notifier";
 
 interface IHooksAppProps {
   todos: ITodo[];
@@ -14,6 +15,7 @@ interface IHooksAppProps {
 const App = (props: IHooksAppProps) => {
   const [todos, setTodos] = useState(props.todos);
   const [theme, setTheme] = useState(themes.light);
+  const [offline, setOffline] = useState();
   const [toggleThemeCount, setToggleThemeCount] = useState(0);
 
   const addTodo = (todoText: string) => {
@@ -39,7 +41,22 @@ const App = (props: IHooksAppProps) => {
     setTheme(newTheme);
     setToggleThemeCount(toggleThemeCount + 1);
   }
+/* 
+  useEffect(() => {
+    window.addEventListener('online', () => {
+      setOffline({ offline: false });
+    });
 
+    window.addEventListener('offline', () => {
+      setOffline({ offline: true });
+    });
+
+    let offlineStatus = !navigator.onLine;
+        if (offline !== offlineStatus) {
+          setOffline({ offline: offlineStatus });
+        }
+  });
+ */
   useEffect(() => {
   /*
     - By using this Hook, you tell React that your component needs to do something after render
@@ -65,6 +82,7 @@ const App = (props: IHooksAppProps) => {
       </ThemeContext.Provider>
       <TodoListRenderer todos={todos} onComplete={completeTodo} onRemove={removeTodo} />
       <TodoFormContainer addTodo={addTodo} />
+      <Notifier offline={offline} />
     </div>
   );
 }
