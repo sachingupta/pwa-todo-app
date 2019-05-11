@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useState } from "react";
 
-import { TodoForm } from "../components/TodoForm";
+import { TodoForm } from "./TodoForm";
 
 interface ITodoFormContainerProps {
     addTodo: (text: string) => void;

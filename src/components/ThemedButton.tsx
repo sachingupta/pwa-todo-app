@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useContext } from "react";
-import { ThemeContext } from "../components/ThemeContext";
+import { ThemeContext } from "./ThemeContext";
 
 export function ThemedButton() {
     const { theme, toggleTheme } = useContext(ThemeContext);

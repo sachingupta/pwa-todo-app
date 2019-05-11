@@ -7,6 +7,7 @@ import { TodoFormContainer } from "./components/TodoFormContainer";
 import { ThemeContext, themes } from "./components/ThemeContext";
 import { Toolbar } from "./components/ToolBar";
 import { Notifier } from "./components/Notifier";
+import { CloudCamera } from "./components/CloudCamera/index"
 
 interface IHooksAppProps {
   todos: ITodo[];
@@ -15,7 +16,7 @@ interface IHooksAppProps {
 const App = (props: IHooksAppProps) => {
   const [todos, setTodos] = useState(props.todos);
   const [theme, setTheme] = useState(themes.light);
-  const [offline, setOffline] = useState();
+  const [offline, setOffline] = useState(false);
   const [toggleThemeCount, setToggleThemeCount] = useState(0);
 
   const addTodo = (todoText: string) => {
@@ -41,22 +42,24 @@ const App = (props: IHooksAppProps) => {
     setTheme(newTheme);
     setToggleThemeCount(toggleThemeCount + 1);
   }
-/* 
+ 
   useEffect(() => {
     window.addEventListener('online', () => {
-      setOffline({ offline: false });
+      setOffline(false);
     });
 
     window.addEventListener('offline', () => {
-      setOffline({ offline: true });
+      setOffline(true);
     });
+  }, []);
 
+  useEffect(() => {
     let offlineStatus = !navigator.onLine;
         if (offline !== offlineStatus) {
-          setOffline({ offline: offlineStatus });
+          setOffline(offlineStatus);
         }
   });
- */
+ 
   useEffect(() => {
   /*
     - By using this Hook, you tell React that your component needs to do something after render
@@ -83,6 +86,7 @@ const App = (props: IHooksAppProps) => {
       <TodoListRenderer todos={todos} onComplete={completeTodo} onRemove={removeTodo} />
       <TodoFormContainer addTodo={addTodo} />
       <Notifier offline={offline} />
+      <CloudCamera offline={offline} />
     </div>
   );
 }

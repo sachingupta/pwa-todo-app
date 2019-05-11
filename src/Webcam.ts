@@ -1,4 +1,4 @@
-export class WebCam {
+export class Webcam {
     private webcamElement: any;
     private canvasElement: any;
     constructor(webcamElement: any, canvasElement: any) {
