@@ -99,7 +99,7 @@ export class CloudCamera extends React.Component<any, any> {
                     upload_preset: 'pwa_cloudinary'
                 }
             ).then((data) => this.checkUploadStatus(data)).catch((error) => {
-                alert('Sorry, we encountered an error uploading your image');
+                alert('Sorry, we encountered an error uploading your image' + error);
                 this.setState({ 'uploading': false });
             });
         }
@@ -153,6 +153,9 @@ export class CloudCamera extends React.Component<any, any> {
             this.setState({ 'uploading': false });
             if (!error) {
                 alert("All saved images have been uploaded to your Cloudinary Media Library");
+            }
+            else {
+                alert("Upload failed " + error);
             }
         }
     }
