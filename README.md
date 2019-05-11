@@ -46,3 +46,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ##Webcam tutorial
 https://dev.to/ore/building-an-offline-pwa-camera-app-with-react-and-cloudinary-5b9k
+
+## flip camera
+https://h3manth.com/new/blog/2018/switch-cameras-getusermedia/
+

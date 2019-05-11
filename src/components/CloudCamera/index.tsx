@@ -60,6 +60,9 @@ export class CloudCamera extends React.Component<any, any> {
                     {imageDisplay}
                 </div>
                 {buttons}
+                <div>
+                    <button className="captureButton" onClick={this.flipCamera}> Flip Camera </button>
+                    </div>
             </div>
         );
     }
@@ -77,6 +80,10 @@ export class CloudCamera extends React.Component<any, any> {
             captured: false,
             capturedImage: null
         })
+    }
+
+    flipCamera = () => {
+        
     }
 
     uploadImage = () => {
